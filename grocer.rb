@@ -43,7 +43,6 @@ def consolidate_cart(cart)
 end
 
 
-
 #input: arary of item hashes, array of coupon hashes 
 #output: new array mix of item hashes & "ITEM W/ COUPON" hashes where applicable 
 
@@ -103,7 +102,7 @@ def apply_coupons(cart, coupons)
           :item => coupon_item_name,
           :price => coupons[index][:cost] / coupons[index][:num],
           :count => coupons[index][:num],
-          :clearance => cart_item[:clearnace] 
+          :clearance => cart_item[:clearance] 
         }
       end
       cart << cart_item_with_coupon

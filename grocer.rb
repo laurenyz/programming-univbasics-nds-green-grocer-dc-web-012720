@@ -118,7 +118,7 @@ def apply_clearance(cart)
   index = 0 
     while index < cart.length do
       if cart[index][:clearance]
-        clearance_price = cart[index][:clearance] * 0.8
+        clearance_price = cart[index][:price] * 0.8
         clearance_price = clearance_price.round(2)
         new_cart<< {
           :item => cart[index][:item],

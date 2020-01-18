@@ -113,15 +113,15 @@ def apply_coupons(cart, coupons)
   cart
 end
 
-# def apply_clearance(cart)
-#   new_cart = []
-#   index = 0 
-#     while index < cart.length
+def apply_clearance(cart)
+  new_cart = []
+  index = 0 
+    while index < cart.length
     
     
-#     index += 1
-#     end
-# end
+    index += 1
+    end
+end
 
 def checkout(cart, coupons)
   # Consult README for inputs and outputs

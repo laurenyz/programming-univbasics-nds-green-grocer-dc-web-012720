@@ -117,8 +117,19 @@ def apply_clearance(cart)
   new_cart = []
   index = 0 
     while index < cart.length
-    
-    
+      if cart[index][:clearance]
+        clearance_price = cart[index][:clearance] * 0.8
+        clearance_price = clearance_price.round(2)
+        new_cart<< {
+          :item => cart[index][:item],
+          :price => clearance_price,
+          :clearance => cart[index][:clearance],
+          :count => cart[index][:count]
+        }
+      else
+        new_cart << cart[index]
+      end
+      
     index += 1
     end
 end

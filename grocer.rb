@@ -113,26 +113,37 @@ def apply_coupons(cart, coupons)
   cart
 end
 
-def apply_clearance(cart)
-  new_cart = []
-  index = 0 
-    while index < cart.length do
-      if cart[index][:clearance]
-        clearance_price = cart[index][:price] * 0.8
-        clearance_price = clearance_price.round(2)
-        new_cart<< {
-          :item => cart[index][:item],
-          :price => clearance_price,
-          :clearance => cart[index][:clearance],
-          :count => cart[index][:count]
-        }
-      else
-        new_cart << cart[index]
-      end
+# def apply_clearance(cart)
+#   new_cart = []
+#   index = 0 
+#     while index < cart.length do
+#       if cart[index][:clearance]
+#         clearance_price = cart[index][:price] * 0.8
+#         clearance_price = clearance_price.round(2)
+#         new_cart<< {
+#           :item => cart[index][:item],
+#           :price => clearance_price,
+#           :clearance => cart[index][:clearance],
+#           :count => cart[index][:count]
+#         }
+#       else
+#         new_cart << cart[index]
+#       end
       
-    index += 1
+#     index += 1
+#     end
+#     new_cart
+# end
+
+def apply_clearance(cart)
+  index = 0
+  while index < cart.length do
+    if cart[index][:clearance]
+      cart[index][:price] = (cart[index][:price] * 0.8).round(2)
     end
-    new_cart
+  index += 1
+  end
+  cart
 end
 
 def checkout(cart, coupons)
